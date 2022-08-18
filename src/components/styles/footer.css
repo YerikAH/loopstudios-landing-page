@@ -1,0 +1,124 @@
+.grid-area_footer {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  gap: 2rem;
+  padding: 3rem 0;
+}
+.grid-area_footer_social ul {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 1rem;
+}
+.grid-area_footer_seccions a {
+  font-family: var(--alata);
+  color: var(--white);
+  display: block;
+  padding: 0.8rem 0;
+  text-align: center;
+}
+.grid-area_footer_copy {
+  font-family: var(--alata);
+  color: var(--very-dark-gray);
+}
+.grid-area_footer_copy p {
+  text-align: center;
+}
+.grid-area_footer_logo,
+.grid-area_footer_seccions {
+  margin-bottom: 1rem;
+}
+.grid-area_footer_logo {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-area_footer_logo img {
+  width: 80%;
+}
+.grid-area_footer_social a {
+  position: relative;
+}
+.grid-area_footer_seccions a {
+  position: relative;
+}
+.grid-area_footer_seccions a::before {
+  content: "";
+  position: absolute;
+  background-color: var(--white);
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: -5px;
+  right: 0;
+  transform: scale(0, 1);
+  transition: 0.3s;
+}
+.grid-area_footer_seccions a:hover::before {
+  transform: scale(1, 1);
+}
+.grid-area_footer_social a::before {
+  content: "";
+  position: absolute;
+  background-color: var(--white);
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: -5px;
+  right: 0;
+  transform: scale(0, 1);
+  transition: 0.3s;
+}
+.grid-area_footer_social a:hover::before {
+  transform: scale(1, 1);
+}
+@media (min-width: 720px) {
+  .grid-area_footer {
+    grid-template-areas:
+      "logo social"
+      "seccions copyp";
+    width: 100%;
+    max-width: 1400px;
+    padding: 3rem 1rem;
+  }
+  .grid-area_footer_logo {
+    grid-area: logo;
+    width: 100%;
+    justify-content: left;
+    display: flex;
+  }
+  .grid-area_footer_seccions {
+    grid-area: seccions;
+    width: 100%;
+    justify-content: left;
+    display: flex;
+  }
+  .grid-area_footer_social {
+    grid-area: social;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+  }
+  .grid-area_footer_copy {
+    grid-area: copyp;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+  }
+  .grid-area_footer_seccions ul {
+    display: flex;
+  }
+  .grid-area_footer {
+    place-content: space-between;
+  }
+  .grid-area_footer_logo img {
+    width: auto;
+    padding: 0rem 1rem;
+  }
+  .grid-area_footer_seccions a {
+    margin: 0 1rem;
+  }
+  .grid-area_footer_copy p {
+    text-align: right;
+  }
+}
