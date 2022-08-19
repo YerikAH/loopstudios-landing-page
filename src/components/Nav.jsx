@@ -1,26 +1,11 @@
 import React from "react";
-import { useState } from "react";
 import "./styles/nav.css";
 import logo from "../images/logo.svg";
 import ham from "../images/icon-hamburger.svg";
 import closeHam from "../images/icon-close.svg";
 import Menu from "./Menu";
 
-function Nav() {
-  const [menu, setMenu] = useState(false);
-  const handleMenu = (e) => {
-    if (!menu) {
-      let broNext = e.target.nextElementSibling;
-      e.target.style.display = "none";
-      broNext.style.display = "block";
-      setMenu(true);
-    } else {
-      let broBack = e.target.previousElementSibling;
-      e.target.style.display = "none";
-      broBack.style.display = "block";
-      setMenu(false);
-    }
-  };
+function Nav({menu, handleMenu}) {
   return (
     <>
       <nav>
